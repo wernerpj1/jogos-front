@@ -1,5 +1,4 @@
 
-import './App.css';
 import Menu from './components/menu/Menu';
 
 

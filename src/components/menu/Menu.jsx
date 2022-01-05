@@ -1,5 +1,7 @@
 import React from "react";
+import Burger from "./Burger";
 import * as M from './MenuStyled';
+import Nav from "./Nav";
 
 
 function Menu(){
@@ -8,11 +10,8 @@ function Menu(){
 
     return (
         <M.Menu>
-          <M.Hamburguer>
-            
-          </M.Hamburguer>
-      
-      </M.Menu>
+          <Burger />         
+       </M.Menu>
     );
 }
 export default Menu
