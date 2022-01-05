@@ -3,6 +3,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Nav from './Nav';
 
+const MenuStyle = styled.div`
+    display: flex;
+    justify-content: space-around;
+`;
 const BurgerStyle = styled.div`
     width: 2rem;
     height: 2rem;
@@ -12,6 +16,7 @@ const BurgerStyle = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+    z-index: 20;
 
 
     div {
@@ -42,14 +47,14 @@ const Burger = () => {
 
     const [open, setOpen] = useState(false)
     return (
-        <>
+        <MenuStyle>
         <BurgerStyle open={open} onClick={() => setOpen(!open)}>
             <div />
             <div />
             <div />
         </BurgerStyle>
-        <Nav open={open}/>
-        </>
+            <Nav open={open}/>
+        </MenuStyle>
     )
 }
 
