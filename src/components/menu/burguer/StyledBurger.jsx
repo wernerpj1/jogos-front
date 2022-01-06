@@ -1,13 +1,10 @@
-
-import React, { useState } from 'react'
 import styled from 'styled-components'
-import Nav from './Nav';
 
-const MenuStyle = styled.div`
+export const MenuStyle = styled.div`
     display: flex;
     justify-content: space-around;
 `;
-const BurgerStyle = styled.div`
+export const BurgerStyle = styled.div`
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -22,7 +19,7 @@ const BurgerStyle = styled.div`
     div {
         width: 2rem;
         height: 0.25rem;
-        background-color: #333;
+        background-color: white;
         border-radius: 10px;
         transform-origin: 1px;
         transition: all 0.3s linear;
@@ -42,20 +39,3 @@ const BurgerStyle = styled.div`
     }
    
 `;
-
-const Burger = () => {
-
-    const [open, setOpen] = useState(false)
-    return (
-        <MenuStyle>
-        <BurgerStyle open={open} onClick={() => setOpen(!open)}>
-            <div />
-            <div />
-            <div />
-        </BurgerStyle>
-            <Nav open={open}/>
-        </MenuStyle>
-    )
-}
-
-export default Burger
