@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const NavBar = styled.div`
-    transform: ${({ open }) => open ? 'translateX(10%)' : 'translateX(-170%)'};
+    transform: ${({ open }) => open ? 'translateX(10vw)' : 'translateX(-170vw)'};
     transition: transform all 0.3s linear;
     flex-flow: row nowrap;
     position: fixed;
