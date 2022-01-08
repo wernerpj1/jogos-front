@@ -1,6 +1,6 @@
 import React, {memo} from "react";
 import Burger from "./burguer/Burger";
-import * as M from './MenuStyled';
+import * as M from './StyledMenu';
 
 
 

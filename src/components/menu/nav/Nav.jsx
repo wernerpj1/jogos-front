@@ -1,16 +1,37 @@
-import React, {memo} from 'react'
+import React, {memo, useState} from 'react'
 import * as S from './StyledNav'
 import propTypes from 'prop-types';
+import useJogos from '../../../hooks/Hook';
 
 
 function Nav (props)  {
-    const {open, onClick, userMail, senha} = props
+    const {open} = props
+    const { getUser, getAllGames } = useJogos();
+    const [usernameForSearch, setUsernameForSearch] = useState();
+    const [userpasswordForSearch, setUserpasswordForSearch] = useState();
+    
+
+   const  formUser = {
+        email: usernameForSearch,
+        senha: userpasswordForSearch,
+    }
+    
+    const HandleClick = () => {
+        if (!usernameForSearch) return;
+            return getAllGames();
+    }
+
+    
 
     return (
         <S.NavBar open={ open }>
-            <S.InputNav type="email" placeholder='Example@example.com' value={userMail} />
-            <S.InputNav type="password" placeholder='Senha:' value={senha}/>
-            <S.ButtonApp onClick={onClick}>Login</S.ButtonApp>
+            
+            <S.InputNav type="email" placeholder='Example@example.com' 
+                onChange={(event) => setUsernameForSearch(event.target.value)}/>
+            <S.InputNav type="password" placeholder='Senha:' 
+                onChange={(event) => setUserpasswordForSearch(event.target.value)}/>
+            <S.ButtonApp onClick={HandleClick}>Login</S.ButtonApp>
+        
         </S.NavBar>
     )
    

@@ -15,8 +15,13 @@ export const GameCardLayout = styled.div`
 `;
 
 export const Section = styled.section`
+    display: flex;
     position: relative;
     width: 30vw;
     height: 100em;
     background-color: white
 `;
+
+export const Nome = styled.div`
+    background-color: red;
+`

@@ -1,6 +1,6 @@
 import React from 'react'
 import Slider from "react-slick";
-import { GameCard } from '../gameCard/GameCard';
+import { GameCardContainer } from '../containers/GameCardContainer';
 
 export const Carrousel = () => {
     var settings = {
@@ -14,13 +14,13 @@ export const Carrousel = () => {
     return (
         <>
             <Slider {...settings}>
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
-                <GameCard />
+                <GameCardContainer />
+                <GameCardContainer />
+                <GameCardContainer />
+                <GameCardContainer />
+                <GameCardContainer />
+                <GameCardContainer />
+                
             </Slider>      
         </>
     )
