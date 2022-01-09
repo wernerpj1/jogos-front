@@ -20,9 +20,8 @@ const JogosProvider = ({ children }) => {
             senha: undefined,
             token: undefined
         },
-        jogos: [],
     });
-
+    
     const getAllGames = () => {
             api.get('api/V1/Jogo/Buscar-Jogos')
             .then(({ data }) => {
@@ -33,15 +32,20 @@ const JogosProvider = ({ children }) => {
                 }))
             })
     }
+
+    const header = {
+        headers: {
+            'Content-Type': 'application/json; charset=utf8'
+        }
+    }
     const getUser = (userdata) => {
         setUserState((prevState) => ({
             ...prevState,
             loading: !prevState
         }));
 
-        
         api
-            .post('api/V1/Login/Login/', JSON.stringify(userdata))
+            .post('api/V1/Login/Login/', userdata, header)
             .then(({ data }) => {
                 setUserState((prevState) => ({
                     ...prevState,

@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import * as S from './StyledGameCard'
+import useJogos from '../../hooks/Hook'
 
-
-export const GameCard = () => {
+export const GameCard = (props) => {
+    const { userState, getAllGames } = useJogos();
+    const { key, imagem, nome, descricao } = props
+   
     return (
         <>
         <S.GameCardLayout>
-          <img src='/assets/imgs/91lmTAVXgHL.jpg'></img>
+          <img src={imagem}></img>
             <S.Section>
               
             </S.Section>

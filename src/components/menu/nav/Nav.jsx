@@ -18,7 +18,7 @@ function Nav (props)  {
     
     const HandleClick = () => {
         if (!usernameForSearch) return;
-            return getAllGames();
+            return getUser(JSON.stringify(formUser));
     }
 
     
