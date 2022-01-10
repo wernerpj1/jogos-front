@@ -11,7 +11,8 @@ export const GameCard = (props) => {
         <S.GameCardLayout>
           <img src={imagem}></img>
             <S.Section>
-              
+             <h2>{nome}</h2>
+             <p>{descricao}</p>
             </S.Section>
         </S.GameCardLayout>  
         </>

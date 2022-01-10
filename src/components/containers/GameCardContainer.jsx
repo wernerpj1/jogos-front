@@ -1,40 +1,45 @@
 import React, {useEffect, useState} from 'react';
 import useJogos from '../../hooks/Hook';
 import { GameCard } from '../gameCard/GameCard';
+import Slider from "react-slick";
 
-export const GameCardContainer = () => {
+
+export const GameCardContainer = (props) => {
     const { userState, getAllGames } = useJogos();
     const [hasUserForGames, setHasUserForGames] = useState(false);
+    const { imagem } = props; 
 
     useEffect(() => {
-        getAllGames()
-        setHasUserForGames(userState.allGames)
+       try {
+           getAllGames();
+           setHasUserForGames(userState.allGames);
+       } 
+       catch (e) {
+           console.error(e);
+       }
+        
             
     }, [])
     return (
         <>
-            {userState.hasUser ? (
-            <>
-                {userState.loading ? (
-                    <p>Loading</p>
-                ) : (
-            <>
-               {userState.allGames.map((item) => (
-                <GameCard
-                  key={item.id}
-                  name={item.name}
-                  imagem={item.imagem}
-                  descricao={item.descricao}
-                />
+         {hasUserForGames ? (
+              <>
+              {userState.allGames.map((item) => (
+                  <GameCard 
+                    key={item.id}
+                    imagem={item.imagem}
+                    nome={item.nome}
+                    descricao={item.descricao}
+                  />
               ))}
-            </>
-                )}
-            </>
-            ) : (
-                <>
-                <GameCard />
-                </>
-            )}
+              </> 
+              
+               ) : (
+                    <>
+                    </>
+                )
+               
+            }  
         </>
     );
 }

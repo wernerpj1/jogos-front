@@ -22,8 +22,8 @@ const JogosProvider = ({ children }) => {
         },
     });
     
-    const getAllGames = () => {
-            api.get('api/V1/Jogo/Buscar-Jogos')
+    const getAllGames = async () => {
+           api.get('api/V1/Jogo/Buscar-Jogos')
             .then(({ data }) => {
                 console.log("data: " + JSON.stringify(data));
                 setUserState((prevState) => ({

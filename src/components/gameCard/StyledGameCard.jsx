@@ -18,7 +18,7 @@ export const Section = styled.section`
     display: flex;
     position: relative;
     width: 30vw;
-    height: 100em;
+    height: 10em;
     background-color: white
 `;
 

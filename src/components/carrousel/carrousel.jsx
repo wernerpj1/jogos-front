@@ -15,11 +15,6 @@ export const Carrousel = () => {
         <>
             <Slider {...settings}>
                 <GameCardContainer />
-                <GameCardContainer />
-                <GameCardContainer />
-                <GameCardContainer />
-                <GameCardContainer />
-                <GameCardContainer />
                 
             </Slider>      
         </>
