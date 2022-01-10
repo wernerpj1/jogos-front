@@ -1,7 +1,7 @@
 
 import Menu from './components/menu/Menu';
 import styled from 'styled-components';
-import { Carrousel } from './components/carrousel/carrousel';
+import { GameCardContainer } from './components/containers/GameCardContainer';
 
 const AppBack = styled.div`
   background-color: black;
@@ -13,7 +13,7 @@ function App() {
     <>
       <AppBack>
       <Menu />
-      <Carrousel />
+      <GameCardContainer />
       </AppBack>
     </>
   );

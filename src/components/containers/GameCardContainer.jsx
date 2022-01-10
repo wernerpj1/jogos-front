@@ -7,7 +7,15 @@ import Slider from "react-slick";
 export const GameCardContainer = (props) => {
     const { userState, getAllGames } = useJogos();
     const [hasUserForGames, setHasUserForGames] = useState(false);
-    const { imagem } = props; 
+    const { imagem, key} = props; 
+    
+    var settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3
+    };
 
     useEffect(() => {
        try {
@@ -23,7 +31,7 @@ export const GameCardContainer = (props) => {
     return (
         <>
          {hasUserForGames ? (
-              <>
+                <Slider {...settings}>
               {userState.allGames.map((item) => (
                   <GameCard 
                     key={item.id}
@@ -32,7 +40,7 @@ export const GameCardContainer = (props) => {
                     descricao={item.descricao}
                   />
               ))}
-              </> 
+              </Slider> 
               
                ) : (
                     <>
