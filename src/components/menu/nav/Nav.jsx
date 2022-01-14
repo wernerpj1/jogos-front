@@ -14,12 +14,12 @@ function Nav (props)  {
    const  formUser = {
         email: usernameForSearch,
         senha: userpasswordForSearch,
-    }
+    };
     
     const HandleClick = () => {
         if (!usernameForSearch) return;
-            return getUser(JSON.stringify(formUser));
-    }
+            return getUser(formUser);
+    };
 
     
 

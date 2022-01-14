@@ -35,7 +35,8 @@ const JogosProvider = ({ children }) => {
 
     const header = {
         headers: {
-            'Content-Type': 'application/json; charset=utf8'
+            'Accept': 'application/json',
+            'Content-Type': 'application/json; utf-8'
         }
     }
     const getUser = (userdata) => {
@@ -43,22 +44,10 @@ const JogosProvider = ({ children }) => {
             ...prevState,
             loading: !prevState
         }));
-
+        
+        
         api
-            .post('api/V1/Login/Login/', userdata, header)
-            .then(({ data }) => {
-                setUserState((prevState) => ({
-                    ...prevState,
-                    hasUser: true,
-                    user: {
-                        id: data.id,
-                        email: data.email,
-                        nome: data.nome,
-                        senha: data.senha,
-                        token: data.token
-                    },
-                }));
-            })
+            .post('api/V1/Login/Login/', userdata)
             .finally(() => {
                 setUserState((prevState) => ({
                     ...prevState,
